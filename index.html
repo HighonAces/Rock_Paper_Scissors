@@ -10,6 +10,35 @@
     <button onclick="game()">Click to play RPS!</button>
 
     <script>
+        let possibles = ["Rock", "Paper", "Scissors"];
+
+        function game() {
+            var p_choice = prompt("Enter any option");
+            var c_choice = possibles[Math.floor(Math.random() * possibles.length)];
+            playRound(p_choice, c_choice);
+        }
+
+        function playRound(pSelection, cSelection) {
+            if (pSelection.toLowerCase() == "rock" && cSelection.toLowerCase() == "scissors") {
+                alert("You Win!");
+            } else if (pSelection.toLowerCase() == "rock" && cSelection.toLowerCase() == "paper") {
+                alert("You Lost");
+            } else if (pSelection.toLowerCase() == "rock" && cSelection.toLowerCase() == "rock") {
+                alert("It is Draw");
+            } else if (pSelection.toLowerCase() == "paper" && cSelection.toLowerCase() == "paper") {
+                alert("It is Draw");
+            } else if (pSelection.toLowerCase() == "paper" && cSelection.toLowerCase() == "rock") {
+                alert("You Win");
+            } else if (pSelection.toLowerCase() == "paper" && cSelection.toLowerCase() == "scissors") {
+                alert("You Lost");
+            } else if (pSelection.toLowerCase() == "scissors" && cSelection.toLowerCase() == "paper") {
+                alert("You win");
+            } else if (pSelection.toLowerCase() == "scissors" && cSelection.toLowerCase() == "rock") {
+                alert("You Lost");
+            } else if (pSelection.toLowerCase() == "scissors" && cSelection.toLowerCase() == "scissors") {
+                alert("It is a Draww");
+            }
+        }
     </script>
 </body>
 
